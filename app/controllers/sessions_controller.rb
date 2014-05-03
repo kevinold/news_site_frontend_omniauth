@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
+    puts "******************** #{params[:oauth_token]}"
+    puts "******************** #{params[:oauth_verifier]}"
+    ret = system, 'echo', params[:oauth_token]
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     # Reset the session after successful login, per
@@ -13,7 +16,7 @@ class SessionsController < ApplicationController
     # http://guides.rubyonrails.org/security.html#session-fixation-countermeasures
     reset_session
     session[:user_id] = user.id
-    user.add_role :admin if User.count == 1 # make the first user an admin
+    #user.add_role :admin if User.count == 1 # make the first user an admin
     if user.email.blank?
       redirect_to edit_user_path(user), :alert => "Please enter your email address."
     else
