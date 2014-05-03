@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     puts "******************** #{params[:oauth_token]}"
     puts "******************** #{params[:oauth_verifier]}"
-    ret = system, 'echo', params[:oauth_token]
+    #ret = system, 'echo', params[:oauth_token]
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     # Reset the session after successful login, per
