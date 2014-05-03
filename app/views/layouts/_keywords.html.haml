@@ -1,0 +1,22 @@
+.modal.fade{"id" => "keywordModal"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Preferred Keywords
+      .modal-body
+        %p 
+          %table
+            %tr
+              %th Keywords
+              %th
+
+            - @keywords.each do |keyword|
+              %tr
+                %td= keyword.name
+                %td= link_to 'Delete', keyword, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+    //.modal-content
+  //.modal-dialog
+//.modal

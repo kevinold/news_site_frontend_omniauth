@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @keyword.name
+
+= link_to 'Edit', edit_keyword_path(@keyword)
+\|
+= link_to 'Back', keywords_path
