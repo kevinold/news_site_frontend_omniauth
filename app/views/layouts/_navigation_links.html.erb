@@ -1,9 +1,13 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Users', users_path %></li>
-<% end %>
-<% if user_signed_in? %>
-  <li><%= link_to 'Logout', signout_path %></li>
+  <li><%= link_to 'Settings', signout_path %></li>
+    <ul class='settings-menu'>
+      <li class="settings-menu--item"><%= link_to 'Social', 'http://www.google.com' %></li>
+      <li class="settings-menu--item"><%= link_to 'Topics', 'http://www.google.com' %></li>
+      <li class="settings-menu--item"><%= link_to 'Logout', signout_path %></li>
+    </ul>
+  <li><%= link_to 'Add', 'http://www.google.com' %></li>
+  <li><%= link_to 'Refresh', 'http://www.google.com' %></li>
 <% else %>
   <li><%= link_to 'Login', signin_path %></li>
 <% end %>
