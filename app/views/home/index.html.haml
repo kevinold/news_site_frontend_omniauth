@@ -3,8 +3,14 @@
 %table.table
   %tr
     %th Title
-    %th Source
+    -#%th Source
+    %th Summary
+    %th Favorite Count
+    %th Time
   - @stories.each do |i|
     %tr
       %td= i.title
-      %td= i.source_type
+      %td= i.summary
+      -#%td= i.source_type
+      %td= i.favorite_count
+      %td= i.tweet_created_at
