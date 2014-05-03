@@ -1,1 +1,10 @@
 %h3 Home
+
+%table.table
+  %tr
+    %th Title
+    %th Source
+  - @stories.each do |i|
+    %tr
+      %td= i.title
+      %td= i.source_type
