@@ -1,0 +1,25 @@
+$bg: #FDE13F;
+$button: #F2C73F;
+$greybg: #F4F5F5;
+$greydetail: #F4F4F4;
+$greyhover: #B3B3B3;
+$font-stack: 'Lato', Arial, sans-serif;
+
+a:link {color: $greydetail; text-decoration: none;}
+a:visited {color: $greydetail; text-decoration: none;}
+a:hover {color: $greyhover; text-decoration: none;}
+a:active {color: $greydetail; text-decoration: none;}
+
+body {
+  font-family: $font-stack;
+}
+
+nav {
+  background-color: $bg;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
