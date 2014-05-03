@@ -1,0 +1,15 @@
+%h1 Listing keywords
+
+%table
+  %tr
+    %th Name
+    %th
+
+  - @keywords.each do |keyword|
+    %tr
+      %td= keyword.name
+      %td= link_to 'Delete', keyword, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Keyword', new_keyword_path
