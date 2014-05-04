@@ -8,4 +8,5 @@ class Harvest
   field :url
   field :summary
   field :source_image_url
+  field :hostname
 end
