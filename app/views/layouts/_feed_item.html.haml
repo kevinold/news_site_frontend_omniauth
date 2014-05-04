@@ -15,5 +15,7 @@
           #{ link_to i.hostname, i.hostname, :class => 'host'}
       .story-item--right
         .story--favorite
-          %p test
-          %p test
+          %p.upvote
+            %a{:href => 'http://www.google.com'}
+          %p.downvote
+            %a{:href => 'http://www.google.com'}
