@@ -9,8 +9,11 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+    - if current_user
+      %header
+        = render 'layouts/navigation'
+      %main{:role => "main"}
+        = render 'layouts/messages'
+        = yield
+    - else
+      = link_to 'Login', signin_path

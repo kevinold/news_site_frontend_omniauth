@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @stories = Harvest.all
+    @stories = Harvest.all.desc(:rank)
   end
 end
