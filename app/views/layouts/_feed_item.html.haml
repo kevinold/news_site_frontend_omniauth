@@ -6,4 +6,5 @@
     .story--favorite
     .story--twitter-img
       %img{:src => i.source_image_url}
-    .story--date= i.tweet_created_at
+    .story--date= format_newsfeed_date(i.tweet_created_at)
+    -#= i.hostname
