@@ -8,7 +8,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+  %body{:style => 'background-color: #fde13f'}
     - if current_user
       %header
         = render 'layouts/navigation'
@@ -16,4 +16,9 @@
         = render 'layouts/messages'
         = yield
     - else
-      = link_to 'Login', signin_path
+      %div.container
+        %div.row
+          %img{:src => image_url("nuztap_logo.png")}
+        %div.row
+          %div.col-lg-1.col-offset-6.centered{:style => "margin-top: 8%; width: 200px; margin-left: auto; margin-right: auto;"}
+            = link_to 'Login with Twitter', signin_path, {:class => 'btn btn-lg btn-primary', :style => 'color: #fff; margin'}
