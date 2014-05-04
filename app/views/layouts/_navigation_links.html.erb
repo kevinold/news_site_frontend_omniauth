@@ -1,10 +1,9 @@
 <%# add navigation links to this file %>
-<li><a href="#" data-toggle="modal" data-target="#keywordModal">Keywords</a></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Settings', signout_path %></li>
     <ul class='settings-menu'>
       <li class="settings-menu--item"><%= link_to 'Social', 'http://www.google.com' %></li>
-      <li class="settings-menu--item"><%= link_to 'Topics', 'http://www.google.com' %></li>
+      <li class="settings-menu--item"><a href="#" data-toggle="modal" data-target="#keywordModal">Topics</a></li>
       <li class="settings-menu--item"><%= link_to 'Logout', signout_path %></li>
     </ul>
   <li><%= link_to 'Add', 'http://www.google.com' %></li>
