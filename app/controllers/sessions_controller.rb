@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     puts "******************** #{params[:oauth_verifier]}"
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
-    system "/home/ubuntu/nuztap-harvest/harvest.py #{params[:oauth_token]} #{params[:oauth_token]}"
+    system "python /home/ubuntu/nuztap-harvest/harvest.py #{params[:oauth_token]} #{params[:oauth_token]}"
     # Reset the session after successful login, per
     # 2.8 Session Fixation – Countermeasures:
     # http://guides.rubyonrails.org/security.html#session-fixation-countermeasures
