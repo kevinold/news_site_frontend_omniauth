@@ -6,7 +6,7 @@
           %img{:src => i.source_image_url}
       .story-item--middle
         .story--title
-          = i.title
+          #{ link_to i.title, i.url, :style => 'color: #000', :target => "_blank"}
         .story--summary
           = i.summary
         .story--meta
