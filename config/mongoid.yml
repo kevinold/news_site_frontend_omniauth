@@ -62,9 +62,23 @@ test:
     default:
       database: news_site_frontend_omniauth_test
       hosts:
-        - localhost:27017
+        - 54.186.40.28:27017
+        #- localhost:27017
       options:
         read: primary
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
+production:
+  sessions:
+    default:
+      database: hacknashville
+      hosts:
+        - 54.186.40.28:27017
+        #- localhost:27017
+      options:
+        #read: primary
         # In the test environment we lower the retries and retry interval to
         # low amounts for fast failures.
         max_retries: 1
