@@ -1,10 +1,19 @@
 - @stories.each do |i|
   .story--item
-    .story--title= i.title
-    .story--summary= i.summary
-    -#%td= i.source_type
-    .story--favorite
-    .story--twitter-img
-      %img{:src => i.source_image_url}
-    .story--date= format_newsfeed_date(i.tweet_created_at)
-    -#= i.hostname
+    .story-item--inner
+      .story-item--left
+        .story--twitter-img
+          %img{:src => i.source_image_url}
+      .story-item--middle
+        .story--title
+          = i.title
+        .story--summary
+          = i.summary
+        .story--meta
+          = format_newsfeed_date(i.tweet_created_at)
+          &#8226
+          #{ link_to i.hostname, i.hostname, :class => 'host'}
+      .story-item--right
+        .story--favorite
+          %p test
+          %p test
