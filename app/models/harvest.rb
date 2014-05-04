@@ -4,6 +4,7 @@ class Harvest
   field :title
   #field :source_type
   field :favorite_count
+  field :hostname
   field :tweet_created_at
   field :url
   field :summary
