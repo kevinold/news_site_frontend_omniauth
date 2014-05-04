@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    puts "******************** #{params[:oauth_token]}"
-    puts "******************** #{params[:oauth_verifier]}"
+    #puts "******************** #{params[:oauth_token]}"
+    #puts "******************** #{params[:oauth_verifier]}"
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
-    ret = system "python /home/ubuntu/nuztap-harvest/harvest.py #{user.id} #{params[:oauth_token]} #{params[:oauth_verifier]}"
+    ret = system "python /home/ubuntu/nuztap-harvest/harvest.py #{user.id} #{auth['credentials']['token']} #{auth['credentials']['secret']}"
     puts "******** ret"
     # Reset the session after successful login, per
     # 2.8 Session Fixation – Countermeasures:
