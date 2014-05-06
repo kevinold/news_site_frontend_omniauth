@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     #if tweet_count
       Harvest.where(uid: user.uid).delete
     #else
-      system "python /home/ubuntu/nuztap-harvest/harvest.py #{user.uid} #{auth['credentials']['token']} #{auth['credentials']['secret']}"
+      system "python /home/deploy/harvest.py #{user.uid} #{auth['credentials']['token']} #{auth['credentials']['secret']}"
     #end
 
     #puts "******** ret"
