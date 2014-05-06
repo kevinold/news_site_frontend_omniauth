@@ -75,8 +75,7 @@ production:
     default:
       database: hacknashville
       hosts:
-        - 54.186.40.28:27017
-        #- localhost:27017
+        - localhost:27017
       options:
         #read: primary
         # In the test environment we lower the retries and retry interval to
